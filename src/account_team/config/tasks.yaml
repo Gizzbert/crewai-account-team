@@ -1,0 +1,89 @@
+client_company_analysis:
+  description: >
+    Conduct a comprehensive analysis of the client's company, {company},
+    including its market position, recent news, financial performance, and
+    strategic initiatives.
+  expected_output: >
+    A detailed report on the company's current status, challenges, and
+    opportunities, with specific insights relevant to agile product delivery and
+    digital transformation.
+  agent: strategic_researcher
+
+client_role_analysis:
+  description: >
+    Research and analyze the client: {clientname}, his/her professional
+    background, responsibilities, and potential priorities based on their role
+    as {role} and LinkedIn profile: {linkedin}.
+  expected_output: >
+    A profile of the client including their career trajectory, areas of
+    expertise, and likely strategic focus areas in their current role.
+  agent: strategic_researcher
+
+industry_trend_analysis:
+  description: >
+    Identify and analyze key trends in the client's industry: {industry},
+    particularly those related to agile methodologies, AI, cloud computing, and
+    digital transformation.
+  expected_output: >
+    A report on industry trends, highlighting how they might impact the client's
+    business and where agile product delivery could provide significant value.
+  agent: strategic_researcher
+
+agile_strategy_development:
+  description: >
+    Develop a tailored agile product delivery strategy that addresses the
+    specific needs and challenges identified in the client and company analysis.
+  expected_output: >
+    An overview of measures the client and his/her company can take to align
+    themselves more with an agile operating model, including implementation
+    roadmap, expected benefits, and potential challenges.
+  agent: agile_product_delivery_expert
+
+value_proposition_creation:
+  description: >
+    Craft a compelling value proposition that clearly articulates how the
+    consultant's expertise can address the client's specific needs and drive business value.
+  expected_output: >
+    A concise, powerful value proposition statement supported by relevant case
+    studies and quantifiable benefits.
+  agent: agile_product_delivery_expert
+
+meeting_agenda_creation:
+  description: >
+    Design a strategic meeting agenda that effectively balances
+    relationship-building, information gathering, and value demonstration.
+  expected_output: >
+    A detailed meeting agenda with time allocations, key discussion points, and
+    specific goals for each segment of the meeting.
+  agent: meeting_strategist
+
+engagement_strategy_formulation:
+  description: >
+    Develop a comprehensive strategy for engaging with the client before, during and
+    after the meeting, including follow-up actions and long-term relationship
+    building tactics.
+  expected_output: >
+    An engagement playbook outlining conversation strategies, potential
+    objections and responses, and a plan for post-meeting follow-up and
+    nurturing.
+  agent: meeting_strategist
+
+proposal_quality_review:
+  description: >
+    Conduct a thorough review of all outputs produced by the team, ensuring
+    consistency, strategic alignment, and overall quality.
+  expected_output: >
+    A detailed quality assurance report highlighting areas of excellence and
+    suggesting refinements to enhance the overall proposal and meeting strategy.
+  agent: quality_assurance_specialist
+
+final_briefing_compilation:
+  description: >
+    Synthesize all insights, strategies, and plans into a cohesive final
+    briefing document for the consultant.
+  expected_output: >
+    A comprehensive, easy-to-navigate briefing document that equips the
+    consultant with all necessary information and strategies for a successful
+    client meeting.
+  agent: agile_product_delivery_expert
+
