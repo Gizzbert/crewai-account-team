@@ -3,6 +3,7 @@ from crewai.project import CrewBase, agent, crew, task
 from litellm import completion
 from langchain_openai import ChatOpenAI
 from crewai_tools import ScrapeWebsiteTool, SerperDevTool
+from IPython.display import Markdown
 
 # Warning control
 import warnings
@@ -27,9 +28,9 @@ class AccountTeamCrew():
 	def strategic_researcher(self) -> Agent:
 		return Agent(
 			config=self.agents_config['strategic_researcher'],
-			verbose=True,
+			verbose=False,
 			llm='claude-3-5-sonnet-20240620',
-			allow_delegation=True,
+			allow_delegation=False,
 			tools = [scrape_tool, search_tool]
 		)
 
@@ -37,9 +38,9 @@ class AccountTeamCrew():
 	def agile_product_delivery_expert(self) -> Agent:
 		return Agent(
 			config=self.agents_config['agile_product_delivery_expert'],
-			verbose=True,
+			verbose=False,
 			llm='claude-3-5-sonnet-20240620',
-			allow_delegation=True,
+			allow_delegation=False,
 			tools = [scrape_tool, search_tool]
 		)
 
@@ -47,9 +48,9 @@ class AccountTeamCrew():
 	def meeting_strategist(self) -> Agent:
 		return Agent(
 			config=self.agents_config['meeting_strategist'],
-			verbose=True,
+			verbose=False,
 			llm='claude-3-5-sonnet-20240620',
-			allow_delegation=True,
+			allow_delegation=False,
 			tools = [scrape_tool, search_tool]
 		)
 
@@ -57,109 +58,70 @@ class AccountTeamCrew():
 	def quality_assurance_specialist(self) -> Agent:
 		return Agent(
 			config=self.agents_config['quality_assurance_specialist'],
-			verbose=True,
+			verbose=False,
 			llm='claude-3-5-sonnet-20240620',
+			allow_delegation=True,
 			tools = [scrape_tool, search_tool]
+		)
+
+	@agent
+	def project_manager(self) -> Agent:
+		return Agent(
+			config=self.agents_config['project_manager'],
+			verbose=False,
+			llm='claude-3-5-sonnet-20240620',
+			allow_delegation=True,
 		)
 
 	@task
 	def client_company_analysis(self) -> Task:
-		return Task(config=self.tasks_config['client_company_analysis'])
-
-	@task
-	def review_client_company_analysis(self) -> Task:
-		return Task(config=self.tasks_config['review_client_company_analysis'])
-
-	@task
-	def revise_client_company_analysis(self) -> Task:
-		return Task(config=self.tasks_config['revise_client_company_analysis'])
+		return Task(
+			config=self.tasks_config['client_company_analysis'],
+			output_file='{client_name}_client_company_analysis_output.md',
+		)
 
 	@task
 	def client_role_analysis(self) -> Task:
-		return Task(config=self.tasks_config['client_role_analysis'])
-
-	@task
-	def review_client_role_analysis(self) -> Task:
-		return Task(config=self.tasks_config['review_client_role_analysis'])
-
-	@task
-	def revise_client_role_analysis(self) -> Task:
-		return Task(config=self.tasks_config['revise_client_role_analysis'])
+		return Task(config=self.tasks_config['client_role_analysis'],
+			output_file='{client_name}_client_role_analysis_output.md',
+		)
 
 	@task
 	def industry_trend_analysis(self) -> Task:
-		return Task(config=self.tasks_config['industry_trend_analysis'])
-
-	@task
-	def review_industry_trend_analysis(self) -> Task:
-		return Task(config=self.tasks_config['review_industry_trend_analysis'])
-
-	@task
-	def revise_industry_trend_analysis(self) -> Task:
-		return Task(config=self.tasks_config['revise_industry_trend_analysis'])
+		return Task(config=self.tasks_config['industry_trend_analysis'],
+			output_file='{client_name}_industry_trend_analysis_output.md',
+		)
 
 	@task
 	def agile_strategy_development(self) -> Task:
-		return Task(config=self.tasks_config['agile_strategy_development'])
-
-	@task
-	def review_agile_strategy(self) -> Task:
-		return Task(config=self.tasks_config['review_agile_strategy'])
-
-	@task
-	def revise_agile_strategy(self) -> Task:
-		return Task(config=self.tasks_config['revise_agile_strategy'])
+		return Task(config=self.tasks_config['agile_strategy_development'],
+			output_file='{client_name}_agile_strategy_output.md',
+		)
 
 	@task
 	def value_proposition_creation(self) -> Task:
-		return Task(config=self.tasks_config['value_proposition_creation'])
-
-	@task
-	def review_value_proposition(self) -> Task:
-		return Task(config=self.tasks_config['review_value_proposition'])
-
-	@task
-	def revise_value_proposition(self) -> Task:
-		return Task(config=self.tasks_config['revise_value_proposition'])
+		return Task(config=self.tasks_config['value_proposition_creation'],
+			output_file='{client_name}_value_proposition_output.md',
+		)
 
 	@task
 	def meeting_agenda_creation(self) -> Task:
-		return Task(config=self.tasks_config['meeting_agenda_creation'])
-
-	@task
-	def review_meeting_agenda(self) -> Task:
-		return Task(config=self.tasks_config['review_meeting_agenda'])
-
-	@task
-	def revise_meeting_agenda(self) -> Task:
-		return Task(config=self.tasks_config['revise_meeting_agenda'])
+		return Task(config=self.tasks_config['meeting_agenda_creation'],
+			output_file='{client_name}_meeting_agenda_output.md',
+		)
 
 	@task
 	def engagement_strategy_formulation(self) -> Task:
-		return Task(config=self.tasks_config['engagement_strategy_formulation'])
-
-	@task
-	def review_engagement_strategy(self) -> Task:
-		return Task(config=self.tasks_config['review_engagement_strategy'])
-
-	@task
-	def revise_engagement_strategy(self) -> Task:
-		return Task(config=self.tasks_config['revise_engagement_strategy'])
+		return Task(config=self.tasks_config['engagement_strategy_formulation'],
+			output_file='{client_name}_engagement_strategy_output.md',
+		)
 
 	@task
 	def final_briefing_compilation(self) -> Task:
 		return Task(
 			config=self.tasks_config['final_briefing_compilation'],
-			output_file='final_briefing.md'
+			output_file='{client_name}_final_briefing_output.md',
 		)
-
-	@task
-	def review_final_briefing(self) -> Task:
-		return Task(config=self.tasks_config['review_final_briefing'])
-
-	@task
-	def revise_final_briefing(self) -> Task:
-		return Task(config=self.tasks_config['revise_final_briefing'])
 
 	@crew
 	def crew(self) -> Crew:
@@ -173,30 +135,17 @@ class AccountTeamCrew():
 			],
 			tasks=[
 				self.client_company_analysis(),
-				self.review_client_company_analysis(),
-				self.revise_client_company_analysis(),
 				self.client_role_analysis(),
-				self.review_client_role_analysis(),
-				self.revise_client_role_analysis(),
 				self.industry_trend_analysis(),
-				self.review_industry_trend_analysis(),
-				self.revise_industry_trend_analysis(),
 				self.agile_strategy_development(),
-				self.review_agile_strategy(),
-				self.revise_agile_strategy(),
 				self.value_proposition_creation(),
-				self.review_value_proposition(),
-				self.revise_value_proposition(),
 				self.meeting_agenda_creation(),
-				self.review_meeting_agenda(),
-				self.revise_meeting_agenda(),
 				self.engagement_strategy_formulation(),
-				self.review_engagement_strategy(),
-				self.revise_engagement_strategy(),
 				self.final_briefing_compilation(),
-				self.review_final_briefing(),
-				self.revise_final_briefing()
 			],
 			process=Process.sequential,
+#			process=Process.hierarchical,
+#			manager_agent=self.project_manager(),
 			verbose=True,
 		)
+
