@@ -13,29 +13,42 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
+# Load client details from client_details.yaml file
+import yaml
+def load_client_details(config_file):
+	with open(config_file, 'r') as file:
+		return yaml.safe_load(file)
+
+# Load client configuration globally
+client_config = load_client_details('src/account_team/config/client_details.yaml')
+
 def run():
 	"""
 	Run the crew.
 	"""
 	inputs = {
-		"company": "Port of Amsterdam",
-		"clientname": "Andrew Woodham",
-		"linkedin": "https://www.linkedin.com/in/andrewwoodham/",
-		"role": "Head of IT",
-		"industry": "Ports"
+		"client_name": client_config['client']['name'],
+		"client_industry": client_config['client']['industry'],
+		"contact_name": client_config['client']['contact']['name'],
+		"contact_linkedin": client_config['client']['contact']['linkedin'],
+		"contact_role": client_config['client']['contact']['role'],
 	}
-	AccountTeamCrew().crew().kickoff(inputs=inputs)
+
+	try:
+		AccountTeamCrew().crew().kickoff(inputs=inputs)
+	except Exception as e:
+		raise Exception(f"An error occurred while running the crew: {e}")
 
 def train():
 	"""
 	Train the crew for a given number of iterations.
 	"""
 	inputs = {
-		"company": "Port of Amsterdam",
-		"clientname": "Andrew Woodham",
-		"linkedin": "https://www.linkedin.com/in/andrewwoodham/",
-		"role": "Head of IT",
-		"industry": "Ports"
+		"client_name": client_config['client']['name'],
+		"client_industry": client_config['client']['industry'],
+		"contact_name": client_config['client']['contact']['name'],
+		"contact_linkedin": client_config['client']['contact']['linkedin'],
+		"contact_role": client_config['client']['contact']['role'],
 	}
 	try:
 		AccountTeamCrew().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
@@ -58,7 +71,11 @@ def test():
 	Test the crew execution and returns the results.
 	"""
 	inputs = {
-		"topic": "Port of Amsterdam"
+		"client_name": client_config['client']['name'],
+		"client_industry": client_config['client']['industry'],
+		"contact_name": client_config['client']['contact']['name'],
+		"contact_linkedin": client_config['client']['contact']['linkedin'],
+		"contact_role": client_config['client']['contact']['role'],
 	}
 	try:
 		AccountTeamCrew().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)

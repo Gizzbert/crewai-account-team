@@ -16,9 +16,6 @@ strategic_researcher:
     partnerships. Their work has been pivotal in several Fortune 500 companies'
     expansion strategies, and they're frequently sought after for their
     expertise in competitive intelligence and market trend analysis.
-  cache: True
-#  llm: perplexity
-  mytools: SerplyWebSearchTool,LinkedInProfileScraper
 
 agile_product_delivery_expert:
   role: >
@@ -38,9 +35,6 @@ agile_product_delivery_expert:
     enterprise environments. Their innovative approaches to integrating AI and
     cloud technologies into agile frameworks have earned them speaking
     engagements at major tech conferences worldwide.
-  cache: True
-#  llm: claude
-  mytools: CodeInterpreterTool,ComposioTool
 
 meeting_strategist:
   role: >
@@ -60,9 +54,6 @@ meeting_strategist:
     They've developed proprietary techniques for meeting preparation and
     execution, which have been adopted by several Fortune 100 companies for
     their executive training programs.
-  cache: True
-#  llm: o1-preview
-  mytools: BrowserbaseLoadTool,SerplyNewsSearchTool
 
 quality_assurance_specialist:
   role: >
@@ -84,7 +75,3 @@ quality_assurance_specialist:
     strategies, earning them the nickname "The Proposal Whisperer" among
     colleagues. Their work has directly contributed to a 40% increase in
     proposal acceptance rates at their previous firm.
-  cache: True
-#  llm: o1-preview
-  mytools: CodeInterpreterTool,SerplyScholarSearchTool
-

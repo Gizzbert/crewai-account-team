@@ -1,33 +1,68 @@
 client_company_analysis:
   description: >
-    Conduct a comprehensive analysis of the client's company, {company},
+    Conduct a comprehensive analysis of the client's company, {client_name},
     including its market position, recent news, financial performance, and
     strategic initiatives.
   expected_output: >
-    A detailed report on the company's current status, challenges, and
-    opportunities, with specific insights relevant to agile product delivery and
+    A comprehensive report on the client company's profile, including key strengths, 
+    weaknesses, and potential areas for improvement.
+    Including the company's current status, challenges, and
+    opportunities, with specific insights relevant to product delivery and
     digital transformation.
   agent: strategic_researcher
 
+review_client_company_analysis:
+  description: "Review the client company analysis for accuracy, completeness, and insights."
+  expected_output: "A detailed review report with feedback and suggestions for improvement."
+  agent: quality_assurance_specialist
+
+revise_client_company_analysis:
+  description: "Revise the client company analysis based on the QA feedback."
+  expected_output: "An updated and improved client company analysis report."
+  agent: strategic_researcher
+  output_file: "revised_client_company_analysis.md"
+
 client_role_analysis:
   description: >
-    Research and analyze the client: {clientname}, his/her professional
+    Research and analyze the client: {contact_name}, his/her professional
     background, responsibilities, and potential priorities based on their role
-    as {role} and LinkedIn profile: {linkedin}.
+    as {contact_role} and LinkedIn profile: {contact_linkedin}.
   expected_output: >
     A profile of the client including their career trajectory, areas of
     expertise, and likely strategic focus areas in their current role.
   agent: strategic_researcher
 
+review_client_role_analysis:
+  description: "Review the client role analysis for accuracy, completeness, and insights."
+  expected_output: "A detailed review report with feedback and suggestions for improvement."
+  agent: quality_assurance_specialist
+
+revise_client_role_analysis:
+  description: "Revise the client role analysis based on the QA feedback."
+  expected_output: "An updated and improved client role analysis report."
+  agent: strategic_researcher
+  output_file: "revised_client_role_analysis.md"
+
 industry_trend_analysis:
   description: >
-    Identify and analyze key trends in the client's industry: {industry},
+    Identify and analyze key trends in the client's industry: {client_industry},
     particularly those related to agile methodologies, AI, cloud computing, and
     digital transformation.
   expected_output: >
     A report on industry trends, highlighting how they might impact the client's
     business and where agile product delivery could provide significant value.
   agent: strategic_researcher
+
+review_industry_trend_analysis:
+  description: "Review the industry trend analysis for accuracy, completeness, and insights."
+  expected_output: "A detailed review report with feedback and suggestions for improvement."
+  agent: quality_assurance_specialist
+
+revise_industry_trend_analysis:
+  description: "Revise the industry trend analysis based on the QA feedback."
+  expected_output: "An updated and improved industry trend analysis report."
+  agent: strategic_researcher
+  output_file: "revised_industry_trend_analysis.md"
 
 agile_strategy_development:
   description: >
@@ -39,6 +74,17 @@ agile_strategy_development:
     roadmap, expected benefits, and potential challenges.
   agent: agile_product_delivery_expert
 
+review_agile_strategy:
+  description: "Review the agile strategy for effectiveness, alignment with client needs, and practicality."
+  expected_output: "A detailed review report with feedback and suggestions for improvement."
+  agent: quality_assurance_specialist
+
+revise_agile_strategy:
+  description: "Revise the agile strategy based on the QA feedback."
+  expected_output: "An updated and improved agile strategy document."
+  agent: agile_product_delivery_expert
+  output_file: "revised_agile_strategy.md"
+
 value_proposition_creation:
   description: >
     Craft a compelling value proposition that clearly articulates how the
@@ -48,6 +94,17 @@ value_proposition_creation:
     studies and quantifiable benefits.
   agent: agile_product_delivery_expert
 
+review_value_proposition:
+  description: "Review the value proposition for clarity, impact, and alignment with client needs."
+  expected_output: "A detailed review report with feedback and suggestions for improvement."
+  agent: quality_assurance_specialist
+
+revise_value_proposition:
+  description: "Revise the value proposition based on the QA feedback."
+  expected_output: "An updated and improved value proposition statement."
+  agent: agile_product_delivery_expert
+  output_file: "revised_value_proposition.md"
+
 meeting_agenda_creation:
   description: >
     Design a strategic meeting agenda that effectively balances
@@ -56,6 +113,17 @@ meeting_agenda_creation:
     A detailed meeting agenda with time allocations, key discussion points, and
     specific goals for each segment of the meeting.
   agent: meeting_strategist
+
+review_meeting_agenda:
+  description: "Review the meeting agenda for completeness, flow, and alignment with overall objectives."
+  expected_output: "A detailed review report with feedback and suggestions for improvement."
+  agent: quality_assurance_specialist
+
+revise_meeting_agenda:
+  description: "Revise the meeting agenda based on the QA feedback."
+  expected_output: "An updated and improved meeting agenda."
+  agent: meeting_strategist
+  output_file: "revised_meeting_agenda.md"
 
 engagement_strategy_formulation:
   description: >
@@ -68,14 +136,16 @@ engagement_strategy_formulation:
     nurturing.
   agent: meeting_strategist
 
-proposal_quality_review:
-  description: >
-    Conduct a thorough review of all outputs produced by the team, ensuring
-    consistency, strategic alignment, and overall quality.
-  expected_output: >
-    A detailed quality assurance report highlighting areas of excellence and
-    suggesting refinements to enhance the overall proposal and meeting strategy.
+review_engagement_strategy:
+  description: "Review the engagement strategy for effectiveness, relevance, and potential impact."
+  expected_output: "A detailed review report with feedback and suggestions for improvement."
   agent: quality_assurance_specialist
+
+revise_engagement_strategy:
+  description: "Revise the engagement strategy based on the QA feedback."
+  expected_output: "An updated and improved engagement strategy document."
+  agent: meeting_strategist
+  output_file: "revised_engagement_strategy.md"
 
 final_briefing_compilation:
   description: >
@@ -87,3 +157,13 @@ final_briefing_compilation:
     client meeting.
   agent: agile_product_delivery_expert
 
+review_final_briefing:
+  description: "Perform a comprehensive review of the final briefing, ensuring all elements are accurate, cohesive, and aligned with the client's needs."
+  expected_output: "A final review report confirming the briefing's readiness or suggesting last-minute adjustments to maximize its impact."
+  agent: quality_assurance_specialist
+
+revise_final_briefing:
+  description: "Revise the final briefing based on the QA feedback."
+  expected_output: "An updated and improved final briefing document, ready for team use."
+  agent: meeting_strategist
+  output_file: "revised_final_briefing.md"
