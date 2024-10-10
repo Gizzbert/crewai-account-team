@@ -1,0 +1,7 @@
+client:
+  name: "Tesla"
+  industry: "AI, Robotics, Automotive"
+  contact:
+    name: "Elon Musk"
+    linkedin: "https://www.linkedin.com/in/elonmusk/"
+    role: "CEO"
