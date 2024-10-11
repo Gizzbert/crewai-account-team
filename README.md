@@ -1,6 +1,18 @@
 # AccountTeam Crew
 
-Welcome to the AccountTeam Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+Welcome to the AccountTeam Crew project, powered by [crewAI](https://crewai.com). 
+
+Installing this repo will give you a team of highly skilled workers ready to go at a moments notice. They are specifically geared toward helping account and sales teams of consulting companies to prepare a first or follow-up client meeting.
+
+In the current setup the crew will go out and gather inputs regardin the client, their long term outlook, their delivery strategies and your contact. Armed with this information they will synthesize a value proposition, a set of reports on the industry and a meeting agenda.
+
+The crew consists of the following specialists:
+- Strategic researcher, responsible for gathering and analyzing comprehensive information about the client, their role, company, and industry to inform the meeting strategy.
+- Agile product delivery expert, tasked with developing a tailored agile product delivery strategy that aligns with the client's role and company bjectives.
+- Meeting strategist, responsible for crafting an effective meeting strategy and agenda that maximizes the potential for a successful engagement with the client.
+- Quality assurance specialist, ensuring the accuracy, coherence, and strategic alignment of all outputs produced by the team, providing critical feedback for refinement. (not engaged in the current setup)
+- Project Manager, making sure the right roles do their task at the right moment and information is shared when applicable (not engaged in the current setup)
+
 
 ## Installation
 
@@ -20,12 +32,13 @@ crewai install
 ```
 ### Customizing
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+**Add your `OPENAI/Claude API_KEY` into the `.env` file** (note that the current install uses Claude 3.5 Sonnet LLM)
 
-- Modify `src/account_team/config/agents.yaml` to define your agents
-- Modify `src/account_team/config/tasks.yaml` to define your tasks
-- Modify `src/account_team/crew.py` to add your own logic, tools and specific args
-- Modify `src/account_team/main.py` to add custom inputs for your agents and tasks
+- Copy .env.example to .env and add in your API keys
+- Modify `src/account_team/config/agents.yaml` to refine your agents
+- Modify `src/account_team/config/tasks.yaml` to refine your tasks
+- Modify `src/account_team/crew.py` and pay specific attention to the llm used (you need an api key)
+- Copy & modify `src/account_team/config/client_details.yaml` to match your client
 
 ## Running the Project
 
@@ -37,18 +50,9 @@ $ crewai run
 
 This command initializes the account_team Crew, assembling the agents and assigning them tasks as defined in your configuration.
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+This example, unmodified, will run the create a set of reports with the output of a research on LLMs in the root folder.
 
 ## Understanding Your Crew
 
 The account_team Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
 
-## Support
-
-For support, questions, or feedback regarding the AccountTeam Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.

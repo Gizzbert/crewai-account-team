@@ -77,50 +77,50 @@ class AccountTeamCrew():
 	def client_company_analysis(self) -> Task:
 		return Task(
 			config=self.tasks_config['client_company_analysis'],
-			output_file='{client_name}_client_company_analysis_output.md',
+			output_file='client_company_analysis_output.md',
 		)
 
 	@task
 	def client_role_analysis(self) -> Task:
 		return Task(config=self.tasks_config['client_role_analysis'],
-			output_file='{client_name}_client_role_analysis_output.md',
+			output_file='client_role_analysis_output.md',
 		)
 
 	@task
 	def industry_trend_analysis(self) -> Task:
 		return Task(config=self.tasks_config['industry_trend_analysis'],
-			output_file='{client_name}_industry_trend_analysis_output.md',
+			output_file='industry_trend_analysis_output.md',
 		)
 
 	@task
 	def agile_strategy_development(self) -> Task:
 		return Task(config=self.tasks_config['agile_strategy_development'],
-			output_file='{client_name}_agile_strategy_output.md',
+			output_file='agile_strategy_output.md',
 		)
 
 	@task
 	def value_proposition_creation(self) -> Task:
 		return Task(config=self.tasks_config['value_proposition_creation'],
-			output_file='{client_name}_value_proposition_output.md',
+			output_file='value_proposition_output.md',
 		)
 
 	@task
 	def meeting_agenda_creation(self) -> Task:
 		return Task(config=self.tasks_config['meeting_agenda_creation'],
-			output_file='{client_name}_meeting_agenda_output.md',
+			output_file='meeting_agenda_output.md',
 		)
 
 	@task
 	def engagement_strategy_formulation(self) -> Task:
 		return Task(config=self.tasks_config['engagement_strategy_formulation'],
-			output_file='{client_name}_engagement_strategy_output.md',
+			output_file='engagement_strategy_output.md',
 		)
 
 	@task
 	def final_briefing_compilation(self) -> Task:
 		return Task(
 			config=self.tasks_config['final_briefing_compilation'],
-			output_file='{client_name}_final_briefing_output.md',
+			output_file='final_briefing_output.md',
 		)
 
 	@crew

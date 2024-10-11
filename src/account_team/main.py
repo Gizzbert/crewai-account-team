@@ -34,8 +34,20 @@ def run():
 		"contact_role": client_config['client']['contact']['role'],
 	}
 
+#	try:
+#		AccountTeamCrew().crew().kickoff(inputs=inputs)
+
 	try:
-		AccountTeamCrew().crew().kickoff(inputs=inputs)
+		crew = AccountTeamCrew().crew()
+		results = crew.kickoff(inputs=inputs)
+
+		# Rename output files with client name
+		client_name = inputs["client_name"]
+		for task in crew.tasks:
+			old_filename = task.output_file
+			new_filename = f"{client_name}_{old_filename}"
+			os.rename(old_filename, new_filename)
+			print(f"Renamed {old_filename} to {new_filename}")
 
 	except Exception as e:
 		raise Exception(f"An error occurred while running the crew: {e}")

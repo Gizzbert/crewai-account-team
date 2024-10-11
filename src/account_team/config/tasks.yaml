@@ -9,6 +9,14 @@ client_company_analysis:
     Including the company's current status, challenges, and
     opportunities, with specific insights relevant to product delivery and
     digital transformation.
+    Use markdown formatting in your response:                                                                                                                                                                                              
+    - Use ## for main sections
+    - Use ### for subsections
+    - Use bullet points or numbered lists for key points
+    - Use **bold** for important terms or figures
+    - Use `code blocks` for any technical information or data
+    - Use > for notable quotes or insights
+    Present your findings in a clear, well-structured manner.
   agent: strategic_researcher
 
 client_role_analysis:
@@ -19,6 +27,14 @@ client_role_analysis:
   expected_output: >
     A profile of the client including their career trajectory, areas of
     expertise, and likely strategic focus areas in their current role.
+    Use markdown formatting in your response:                                                                                                                                                                                              
+    - Use ## for main sections
+    - Use ### for subsections
+    - Use bullet points or numbered lists for key points
+    - Use **bold** for important terms or figures
+    - Use `code blocks` for any technical information or data
+    - Use > for notable quotes or insights
+    Present your findings in a clear, well-structured manner.
   agent: strategic_researcher
 
 industry_trend_analysis:
@@ -29,6 +45,14 @@ industry_trend_analysis:
   expected_output: >
     A report on industry trends, highlighting how they might impact the client's
     business and where agile product delivery could provide significant value.
+    Use markdown formatting in your response:                                                                                                                                                                                              
+    - Use ## for main sections
+    - Use ### for subsections
+    - Use bullet points or numbered lists for key points
+    - Use **bold** for important terms or figures
+    - Use `code blocks` for any technical information or data
+    - Use > for notable quotes or insights
+    Present your findings in a clear, well-structured manner.
   agent: strategic_researcher
 
 agile_strategy_development:
@@ -39,6 +63,14 @@ agile_strategy_development:
     An overview of measures the client and his/her company can take to align
     themselves more with an agile operating model, including implementation
     roadmap, expected benefits, and potential challenges.
+    Use markdown formatting in your response:                                                                                                                                                                                              
+    - Use ## for main sections
+    - Use ### for subsections
+    - Use bullet points or numbered lists for key points
+    - Use **bold** for important terms or figures
+    - Use `code blocks` for any technical information or data
+    - Use > for notable quotes or insights
+    Present your findings in a clear, well-structured manner.
   agent: agile_product_delivery_expert
 
 value_proposition_creation:
@@ -48,6 +80,14 @@ value_proposition_creation:
   expected_output: >
     A concise, powerful value proposition statement supported by relevant case
     studies and quantifiable benefits.
+    Use markdown formatting in your response:                                                                                                                                                                                              
+    - Use ## for main sections
+    - Use ### for subsections
+    - Use bullet points or numbered lists for key points
+    - Use **bold** for important terms or figures
+    - Use `code blocks` for any technical information or data
+    - Use > for notable quotes or insights
+    Present your findings in a clear, well-structured manner.
   agent: agile_product_delivery_expert
 
 meeting_agenda_creation:
@@ -57,6 +97,14 @@ meeting_agenda_creation:
   expected_output: >
     A detailed meeting agenda with time allocations, key discussion points, and
     specific goals for each segment of the meeting.
+    Use markdown formatting in your response:                                                                                                                                                                                              
+    - Use ## for main sections
+    - Use ### for subsections
+    - Use bullet points or numbered lists for key points
+    - Use **bold** for important terms or figures
+    - Use `code blocks` for any technical information or data
+    - Use > for notable quotes or insights
+    Present your findings in a clear, well-structured manner.
   agent: meeting_strategist
 
 engagement_strategy_formulation:
@@ -68,6 +116,14 @@ engagement_strategy_formulation:
     An engagement playbook outlining conversation strategies, potential
     objections and responses, and a plan for post-meeting follow-up and
     nurturing.
+    Use markdown formatting in your response:                                                                                                                                                                                              
+    - Use ## for main sections
+    - Use ### for subsections
+    - Use bullet points or numbered lists for key points
+    - Use **bold** for important terms or figures
+    - Use `code blocks` for any technical information or data
+    - Use > for notable quotes or insights
+    Present your findings in a clear, well-structured manner.
   agent: meeting_strategist
 
 final_briefing_compilation:
@@ -78,4 +134,12 @@ final_briefing_compilation:
     A comprehensive, easy-to-navigate briefing document that equips the
     consultant with all necessary information and strategies for a successful
     client meeting.
+    Use markdown formatting in your response:                                                                                                                                                                                              
+    - Use ## for main sections
+    - Use ### for subsections
+    - Use bullet points or numbered lists for key points
+    - Use **bold** for important terms or figures
+    - Use `code blocks` for any technical information or data
+    - Use > for notable quotes or insights
+    Present your findings in a clear, well-structured manner.
   agent: agile_product_delivery_expert
