@@ -29,7 +29,8 @@ class AccountTeamCrew():
 		return Agent(
 			config=self.agents_config['strategic_researcher'],
 			verbose=False,
-			llm='claude-3-5-sonnet-20240620',
+			#llm='claude-3-5-sonnet-20240620',
+			llm='azure/gpt-4o',
 			allow_delegation=False,
 			tools = [scrape_tool, search_tool]
 		)
@@ -39,7 +40,8 @@ class AccountTeamCrew():
 		return Agent(
 			config=self.agents_config['agile_product_delivery_expert'],
 			verbose=False,
-			llm='claude-3-5-sonnet-20240620',
+			#llm='claude-3-5-sonnet-20240620',
+			llm='azure/gpt-4o',
 			allow_delegation=False,
 			tools = [scrape_tool, search_tool]
 		)
@@ -49,7 +51,8 @@ class AccountTeamCrew():
 		return Agent(
 			config=self.agents_config['meeting_strategist'],
 			verbose=False,
-			llm='claude-3-5-sonnet-20240620',
+			#llm='claude-3-5-sonnet-20240620',
+			llm='azure/gpt-4o',
 			allow_delegation=False,
 			tools = [scrape_tool, search_tool]
 		)
@@ -59,7 +62,8 @@ class AccountTeamCrew():
 		return Agent(
 			config=self.agents_config['quality_assurance_specialist'],
 			verbose=False,
-			llm='claude-3-5-sonnet-20240620',
+			#llm='claude-3-5-sonnet-20240620',
+			llm='azure/gpt-4o',
 			allow_delegation=True,
 			tools = [scrape_tool, search_tool]
 		)
@@ -69,7 +73,8 @@ class AccountTeamCrew():
 		return Agent(
 			config=self.agents_config['project_manager'],
 			verbose=False,
-			llm='claude-3-5-sonnet-20240620',
+			#llm='claude-3-5-sonnet-20240620',
+			llm='azure/gpt-4o',
 			allow_delegation=True,
 		)
 
